@@ -15,7 +15,7 @@ See below if you don't know how to create your pmtiles files.
 
 ### Using Docker
 ```sh
-docker run --rm -it -e BUCKET="file:///data" -e BASE_MAP_URL="http://192.168.1.3:8080" akhenakh/selfhostmap:latest 
+docker run --rm -it -e BUCKET="file:///data" -e BASE_MAP_URL="http://192.168.1.3:8080" ghcr.io/akhenakh/selfhostmap:main 
 ```
 ### Using Caddy
 

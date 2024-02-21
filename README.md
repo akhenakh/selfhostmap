@@ -2,7 +2,7 @@
 
 A complete solution to self host maps using [pmtiles](https://docs.protomaps.com/pmtiles/).
 
-    ![a map](/img/map.jpg)
+![amap](/img/example.jpg)
 
 pmtiles can be used directly using HTTP range queries, but requires some additional js.
 This solution aims at exposing the traditional MVT tiles /z/x/y format leveraging Caddy and a pmtiles plugin.

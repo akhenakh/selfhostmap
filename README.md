@@ -39,13 +39,13 @@ Point your browser to http://localhost:8080
 
 Works with QGIS:
 
-Create a new Vector Tiles Connection:
-URL: http://192.168.1.3:8080/tiles/planet/{z}/{x}/{y}.mvt
-Style: http://192.168.1.3:8080/osm-liberty-gl.json
+Create a new Vector Tiles Connection:  
+URL: http://192.168.1.3:8080/tiles/planet/{z}/{x}/{y}.mvt  
+Style: http://192.168.1.3:8080/osm-liberty-gl.json  
 
-Replace the url with your actual server.
+Replace the url with your actual server.  
     ![QGIS](/img/qgis.jpg)
-Then add the layer to your map.
+Then add the layer to your map.  
     ![QGISMap](/img/qgismap.jpg)
 
 ## Create a map using planetiler

@@ -30,7 +30,7 @@
   "scheme": "xyz",
   "tilejson": "2.1.0",
   "tiles": [
-    "{{env "BASE_MAP_URL"}}/tiles/planet/{z}/{x}/{y}.mvt"
+    "{{env "BASE_MAP_URL"}}/tiles/{{ env "AREA"}}/{z}/{x}/{y}.mvt"
   ],
   "type": "baselayer",
   "vector_layers": [

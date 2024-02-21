@@ -7,15 +7,21 @@ A complete solution to self host maps using [pmtiles](https://docs.protomaps.com
 pmtiles can be served directly using HTTP range queries, but requires some additional js.
 This solution aims at exposing the traditional MVT tiles /z/x/y format leveraging Caddy and a pmtiles plugin.
 
-It can serve local files, over HTTP or s3 storage (see [remote-urls](https://github.com/protomaps/go-pmtiles?tab=readme-ov-file#remote-urls).
+It can serve local files, over HTTP or s3 storage.
 
 ## Serve your map
 
 See below if you don't know how to create your pmtiles files.
 
+### Parameters
+- `AREA`: the name of the pmtiles files, "canada", "planet"... 
+- `BUCKET`: the directory bucket where to find the `AREA` file, "file:///home/user/GIS" or "http://myserver/files" or "s3:mybucket"  
+  see [remote-urls](https://github.com/protomaps/go-pmtiles?tab=readme-ov-file#remote-urls.
+- `BASE_MAP_URL`: the base url where the map will be available "http://192.168.1.3:8080"
+ 
 ### Using Docker
 ```sh
-docker run --rm -it -e BUCKET="file:///data" -e BASE_MAP_URL="http://192.168.1.3:8080" ghcr.io/akhenakh/selfhostmap:main 
+docker run --rm -it -e AREA="canada" -e BUCKET="file:///data" -e BASE_MAP_URL="http://192.168.1.3:8080" ghcr.io/akhenakh/selfhostmap:main 
 ```
 ### Using Caddy
 
@@ -29,7 +35,7 @@ xcaddy build --with github.com/caddy-dns/cloudflare --with github.com/protomaps/
 
 Execute the resulting caddy binary:
 ```sh
-BUCKET="file:///home/user/maps" BASE_MAP_URL="http://localhost:8080" ./caddy run -c ./Caddyfile.local
+AREA="canada" BUCKET="file:///home/user/maps" BASE_MAP_URL="http://localhost:8080" ./caddy run -c ./Caddyfile.local
 ```
 `BUCKET` should point to the directory you saved your pmtiles files.
 

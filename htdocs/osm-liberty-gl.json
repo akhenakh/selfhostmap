@@ -8,7 +8,7 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "url": "{{ env "BASE_MAP_URL"}}/planet.json",
+      "url": "{{ env "BASE_MAP_URL"}}/{{ env "AREA"}}.json",
       "maxzoom": 15
     }
   },

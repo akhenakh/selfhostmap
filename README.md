@@ -5,9 +5,11 @@ A complete solution to self host maps using [pmtiles](https://docs.protomaps.com
 ![amap](/img/example.jpg)
 
 pmtiles can be served directly using HTTP range queries, but requires some additional js.  
-This solution aims at exposing the traditional MVT tiles /z/x/y format leveraging Caddy and a pmtiles plugin.
+This solution aims at exposing the traditional MVT tiles /z/x/y format leveraging Caddy and a pmtiles plugin.  
 
-It can serve local files, over HTTP or s3 storage.
+Styles and assets to display a map are embedded using [osm-liberty](https://maputnik.github.io/osm-liberty/), but any styles can be loaded.
+
+It can serve local pmfiles, over HTTP or s3 storage.
 
 ## Serve your map
 

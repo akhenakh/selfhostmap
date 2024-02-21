@@ -1,0 +1,20 @@
+{
+	auto_https off
+	order pmtiles_proxy before reverse_proxy
+}
+
+:8080 {
+	root * /srv
+	encode gzip
+	file_server
+	templates {
+		mime application/json
+	}
+	handle_path /tiles/* {
+		pmtiles_proxy {
+			bucket {$BUCKET}
+			cache_size 256
+			public_url {$BASE_MAP_URL}/tiles
+		}
+	}
+}

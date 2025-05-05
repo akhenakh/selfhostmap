@@ -1,8 +1,8 @@
-FROM caddy:2.8.4-builder AS builder
+FROM caddy:2.10.0-builder AS builder
 
-RUN xcaddy build --with github.com/caddy-dns/cloudflare --with github.com/protomaps/go-pmtiles/caddy@846d83e4b199344284400809c73d08fe12d0722e
+RUN xcaddy build --with github.com/caddy-dns/cloudflare --with github.com/protomaps/go-pmtiles/caddy@9a400a68d039dfa71e1706f154139558cbd1999f
 
-FROM caddy:2.8.4
+FROM caddy:2.10.0
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 COPY Caddyfile /etc/caddy/Caddyfile

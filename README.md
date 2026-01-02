@@ -20,10 +20,11 @@ See below if you don't know how to create your pmtiles files.
 - `BUCKET`: the directory bucket where to find the `AREA` file, "file:///home/user/GIS" or "http://myserver/files" or "s3://mybucket"  
   see [remote-urls](https://github.com/protomaps/go-pmtiles?tab=readme-ov-file#remote-urls).
 - `BASE_MAP_URL`: the base url where the map will be available "http://192.168.1.3:8080"
+- `CORS_ORIGIN`: (Optional) Allow Cross-Origin requests. Set to `*` for all, or a specific domain like `https://example.com`.
  
 ### Using Docker
 ```sh
-docker run --rm -it -e AREA="canada" -e BUCKET="file:///data" -e BASE_MAP_URL="http://192.168.1.3:8080" ghcr.io/akhenakh/selfhostmap:main 
+docker run --rm -it -e AREA="canada" -v /home/myuser/GIS:/data  -e BUCKET="file:///data" -e BASE_MAP_URL="http://192.168.1.3:8080"   -e CORS_ORIGIN="*" ghcr.io/akhenakh/selfhostmap:main 
 ```
 ### Using Caddy
 

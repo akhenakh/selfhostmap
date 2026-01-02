@@ -6,6 +6,15 @@
 :8080 {
 	root * /srv
 	encode gzip
+
+	#  Redirect the specific AREA request to the generic planet.json template
+	rewrite /{$AREA}.json /planet.json
+
+	# CORS: Only apply headers if the environment variable is set
+	@cors expression {env.CORS_ORIGIN} != ""
+	header @cors Access-Control-Allow-Origin "{env.CORS_ORIGIN}"
+	header @cors Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+
 	file_server
 	templates {
 		mime application/json

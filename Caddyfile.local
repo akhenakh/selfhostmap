@@ -6,6 +6,8 @@
 :8080 {
 	root * htdocs
 	encode gzip
+	# If the client asks for {AREA}.json, serve planet.json internally
+	rewrite /{$AREA}.json /planet.json
 	file_server
 	templates {
 		mime application/json
